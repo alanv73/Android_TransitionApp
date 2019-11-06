@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Transition customTransition = new CustomTransition();
-        customTransition.setDuration(3000);
-
         setContentView(R.layout.activity_main);
     }
 
