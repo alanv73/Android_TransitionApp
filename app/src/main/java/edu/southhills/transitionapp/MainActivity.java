@@ -19,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView textView = findViewById(R.id.textView);
+        textView.setVisibility(View.INVISIBLE);
+        textView.setTextColor(Color.BLACK);
     }
 
     public void buttonClick(View v){
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Transition customTransition = new CustomTransition();
         Transition slide = new Slide(Gravity.TOP);
         customTransition.setDuration(3000);
-        slide.setDuration(3000);
+        slide.setDuration(4000);
 
         ViewGroup root = findViewById(R.id.root_view);
 
@@ -46,14 +50,15 @@ public class MainActivity extends AppCompatActivity {
         TransitionManager.beginDelayedTransition(root, transitionSet);
 
         TextView textView = findViewById(R.id.textView);
+//        textView.setVisibility(View.INVISIBLE);
 
-        if(textView.getCurrentTextColor() == Color.BLACK) {
+        if(textView.getVisibility() == View.VISIBLE) {
             textView.setText("GoodBye World!");
-            textView.setTextColor(Color.RED);
+            textView.setTextColor(Color.BLACK);
             textView.setVisibility(View.INVISIBLE);
         } else {
             textView.setText("Hello World!");
-            textView.setTextColor(Color.BLACK);
+            textView.setTextColor(Color.RED);
             textView.setVisibility(View.VISIBLE);
         }
 
